@@ -3,7 +3,7 @@ title: "Reproducible Research: Peer assessment 1"
 output: html_document
 ---
 
-Github repository with R Markdown source code: https://github.com/PARAMA34/RepData_PeerAssessment1
+Github repository with R Markdown source code present in: https://github.com/PARAMA34/RepData_PeerAssessment1
 
 ## Introduction
 

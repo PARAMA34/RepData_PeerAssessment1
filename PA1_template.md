@@ -20,7 +20,7 @@ First, we set echo equal a TRUE and results equal a 'hold' as global options for
 
 ```r
 library(knitr)
-opts_chunk$set(echo = TRUE, results = 'hold')
+opts_chunk$set(echo = TRUE, results = "hold", fig.height=7, fig.width=7, fig.align='center')
 ```
 ## Load required libraries
 
@@ -175,7 +175,7 @@ tail(sum_data)
 
 The histogram is given by the following lines of code
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
+<img src="figure/histogram1-1.png" title="plot of chunk histogram1" alt="plot of chunk histogram1" style="display: block; margin: auto;" />
 
 #### 3. Calculate and report the mean and median total number of steps taken per day
 The mean and median are computed like
@@ -257,7 +257,7 @@ plot(mean_data$interval,
      main="Time-series of the average number of steps per intervals\n(NA removed)")
 ```
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
+<img src="figure/plotmean-1.png" title="plot of chunk plotmean" alt="plot of chunk plotmean" style="display: block; margin: auto;" />
 
 #### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -373,7 +373,7 @@ hist(sum_data$total,
      main="Histogram of the total number of steps taken each day\n(NA replaced by mean value)")
 ```
 
-![plot of chunk unnamed-chunk-23](figure/unnamed-chunk-23-1.png) 
+<img src="figure/histogram2-1.png" title="plot of chunk histogram2" alt="plot of chunk histogram2" style="display: block; margin: auto;" />
 
 The mean and median are computed like
 
@@ -476,4 +476,4 @@ xyplot(mean ~ interval | daytype, mean_data,
        layout=c(1,2))
 ```
 
-![plot of chunk unnamed-chunk-29](figure/unnamed-chunk-29-1.png) 
+<img src="figure/plotmeanfinal-1.png" title="plot of chunk plotmeanfinal" alt="plot of chunk plotmeanfinal" style="display: block; margin: auto;" />

@@ -27,23 +27,7 @@ opts_chunk$set(echo = TRUE, results = 'hold')
 
 ```r
 library(data.table)
-```
-
-```
-## Warning: package 'data.table' was built under R version 3.1.3
-```
-
-```
-## data.table 1.9.4  For help type: ?data.table
-## *** NB: by=.EACHI is now explicit. See README to restore previous behaviour.
-```
-
-```r
 library(ggplot2) # we shall use ggplot2 for plotting figures
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.1.3
 ```
 
 ## Loading and preprocessing the data
@@ -190,17 +174,6 @@ tail(sum_data)
 #### 2. Make a histogram of the total number of steps taken each day
 
 The histogram is given by the following lines of code
-
-
-```r
-# Compute the histogram of the total number of steps each day
-hist(sum_data$total, 
-     breaks=seq(from=0, to=25000, by=2500),
-     col="green", 
-     xlab="Total number of steps", 
-     ylim=c(0, 20), 
-     main="Histogram of the total number of steps taken each day\n(NA removed)")
-```
 
 ![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
@@ -387,7 +360,10 @@ sum_data <- aggregate(activity$steps, by=list(activity$date), FUN=sum)
 
 # Rename the attributes
 names(sum_data) <- c("date", "total")
+```
 
+
+```r
 # Compute the histogram of the total number of steps each day
 hist(sum_data$total, 
      breaks=seq(from=0, to=25000, by=2500),
@@ -397,7 +373,7 @@ hist(sum_data$total,
      main="Histogram of the total number of steps taken each day\n(NA replaced by mean value)")
 ```
 
-![plot of chunk unnamed-chunk-22](figure/unnamed-chunk-22-1.png) 
+![plot of chunk unnamed-chunk-23](figure/unnamed-chunk-23-1.png) 
 
 The mean and median are computed like
 
@@ -443,13 +419,7 @@ rm(sum_data)
 
 # Load the lattice graphical library
 library(lattice)
-```
 
-```
-## Warning: package 'lattice' was built under R version 3.1.3
-```
-
-```r
 # Compute the average number of steps taken, averaged across all daytype variable
 mean_data <- aggregate(activity$steps, 
                        by=list(activity$daytype, 
@@ -498,7 +468,7 @@ The time series plot take the following form
 
 ```r
 # Compute the time series plot
-xyplot(mean ~ interval | daytype, mean_data, 
+xyplot(mean ~ interval | daytype, mean_data,
        type="l", 
        lwd=1, 
        xlab="Interval", 
@@ -506,4 +476,4 @@ xyplot(mean ~ interval | daytype, mean_data,
        layout=c(1,2))
 ```
 
-![plot of chunk unnamed-chunk-28](figure/unnamed-chunk-28-1.png) 
+![plot of chunk unnamed-chunk-29](figure/unnamed-chunk-29-1.png) 

@@ -117,7 +117,7 @@ tail(sum_data)
 
 The histogram is given by the following lines of code
 
-```{r}
+```{r, fig.width = 7, fig.height = 7, echo = FALSE}
 # Compute the histogram of the total number of steps each day
 hist(sum_data$total, 
      breaks=seq(from=0, to=25000, by=2500),
@@ -170,7 +170,7 @@ tail(mean_data)
 ```
 
 The time series plot is created by the following lines of code
-```{r}
+```{r, fig.width = 7, fig.height = 7}
 # Compute the time series plot
 plot(mean_data$interval, 
      mean_data$mean, 
@@ -256,7 +256,9 @@ sum_data <- aggregate(activity$steps, by=list(activity$date), FUN=sum)
 
 # Rename the attributes
 names(sum_data) <- c("date", "total")
+```
 
+```{r, fig.width = 7, fig.height = 7}
 # Compute the histogram of the total number of steps each day
 hist(sum_data$total, 
      breaks=seq(from=0, to=25000, by=2500),
@@ -321,7 +323,7 @@ tail(mean_data)
 
 The time series plot take the following form
 
-```{r}
+```{r, fig.width = 7, fig.height = 7}
 # Compute the time series plot
 xyplot(mean ~ interval | daytype, mean_data,
        type="l", 
